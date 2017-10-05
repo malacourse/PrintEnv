@@ -8,7 +8,7 @@ var app = express();
 app.get('/', function(req, res) {
   // If READ_FROM_FILE is set then read from file
   if (process.env.READ_FROM_FILE) {
-    res.contentType('application/text');
+    res.contentType('text/html');
     // Synchronous read - only because we expect the file to be very small
     var contents = fs.readFileSync(process.env.READ_FROM_FILE, 'utf8');
     res.send(contents);
